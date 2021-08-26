@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>JS Clock</title>
+</head>
+<body>
+    <input type="checkbox" id="switch" name="theme" />
+    <label for="switch">Toggle</label>
+    <span class="switch">Mode Switch</span>
+    <div class="clocks">
+        <div class="clock minsk">
+            <span class="name-city">Minsk</span>
+            <div class="clock-face">
+                <div class="hand hour-hand-minsk"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+        <div class="clock tashkent">
+            <span class="name-city">Tashkent</span>
+            <div class="clock-face">
+                <div class="hand hour-hand-tash"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+        <div class="clock bishkek">
+            <span class="name-city">Bishkek</span>
+            <div class="clock-face">
+                <div class="hand hour-hand-bish"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+    </div>
+    <span class="digital-clock">Tashkent:</span>
+    <script src="./script.js"></script>
+</body>
+</html>

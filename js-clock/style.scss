@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+html {
+    --bg: url(https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    --clock: url(../assets/clock-face-b.png);
+    --color: #000;
+}
+
+html[data-theme='dark'] {
+    --bg: url(https://images.unsplash.com/photo-1504288145234-919e7bbc6d19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80);
+    --clock: url(../assets/clock-face-w.png);
+    --color: #fff;
+}
+
+body {
+    background: var(--bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    min-height: 100vh;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+    margin-top: 3rem;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: grey;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: rgb(141, 0, 0);
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--color);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
+.switch {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color);
+}
+
+.clocks{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    
+
+    .clock {
+        width: 30rem;
+        height: 30rem;
+        margin: 0 4rem;
+        position: relative;
+
+        .name-city {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--color);
+        }
+    
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+            background: var(--clock);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 1rem 0;
+    
+            .hand {
+                margin-left: 15%;
+                width: 35%;
+                height: .6rem;
+                background-color: var(--color);
+                position: absolute;
+                top: 50%;
+                transform-origin: 100%;
+                transform: rotate(90deg);
+                transition: all .05s;
+                transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+                border-radius: .3rem;
+    
+                &.second-hand{
+                    background-color: red;
+                }
+    
+                &.min-hand {
+                    height: .7rem;
+                    width: 31%;
+                    margin-left: 19%;
+                }
+    
+                &.hour-hand {
+                    height: .9rem;
+                    width: 27%;
+                    margin-left: 23%;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+.digital-clock {
+    position: relative;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--color);
+    margin-bottom: 3rem;
+}
