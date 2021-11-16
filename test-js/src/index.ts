@@ -1,0 +1,14 @@
+import './style.scss';
+import './app';
+import './services/Utils';
+import './views/components/Bottombar';
+import './views/components/Navbar';
+import './views/pages/Home';
+import './views/pages/Setings';
+import './views/pages/Error404';
+import './views/pages/Artist';
+import './views/pages/Paintings';
+import './views/pages/ArtistGame';
+import './views/pages/PaintingsGame';
+import 'bootstrap';
+import './JS/images';
